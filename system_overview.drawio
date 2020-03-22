@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-03-22T10:58:31.259Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" etag="6qNO66Y97eoon76qLdpZ" version="12.8.8" type="github">
+<mxfile host="app.diagrams.net" modified="2020-03-22T10:59:30.080Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" etag="S_5XZdU-uq5e3iPyTubN" version="12.8.8" type="github">
   <diagram id="TmXbN3po548GBnlmAwbr" name="Page-1">
-    <mxGraphModel dx="1503" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1618" dy="916" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -41,7 +41,7 @@
           <mxGeometry x="130" y="10" width="10" height="30" as="geometry" />
         </mxCell>
         <mxCell id="7OuSPlXaUR59k3nLAixx-28" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="40" y="180" width="200" height="100" as="geometry" />
+          <mxGeometry x="40" y="190" width="200" height="100" as="geometry" />
         </mxCell>
         <mxCell id="7OuSPlXaUR59k3nLAixx-8" value="&lt;b&gt;Supermarkt&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#b85450;fillColor=#f8cecc;" vertex="1" parent="7OuSPlXaUR59k3nLAixx-28">
           <mxGeometry width="200" height="100" as="geometry" />
@@ -103,7 +103,7 @@
         <mxCell id="7OuSPlXaUR59k3nLAixx-29" value="" style="aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.android_phone" vertex="1" parent="1">
           <mxGeometry x="90" y="610" width="60" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="7OuSPlXaUR59k3nLAixx-31" value="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;b&gt;Stay or Go? &lt;/b&gt;App&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="7OuSPlXaUR59k3nLAixx-31" value="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;b&gt;Stay or Go? &lt;u&gt;App&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="80" y="580" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7OuSPlXaUR59k3nLAixx-41" value="" style="shape=link;html=1;dashed=1;" edge="1" parent="1">
@@ -121,7 +121,7 @@
         <mxCell id="7OuSPlXaUR59k3nLAixx-44" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;fillColor=#B8ECFC;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="280" y="160" width="240" height="380" as="geometry" />
         </mxCell>
-        <mxCell id="7OuSPlXaUR59k3nLAixx-38" value="&lt;b&gt;&lt;u&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;Überwachte Gebiete&lt;/font&gt;&lt;/u&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="7OuSPlXaUR59k3nLAixx-38" value="&lt;u&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;Überwachte Gebiete&lt;/font&gt;&lt;/u&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="40" y="150" width="160" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7OuSPlXaUR59k3nLAixx-45" value="" style="shape=link;html=1;dashed=1;" edge="1" parent="1" target="7OuSPlXaUR59k3nLAixx-38">
@@ -135,12 +135,6 @@
         </mxCell>
         <mxCell id="7OuSPlXaUR59k3nLAixx-47" value="&lt;b&gt;Nutzerverwaltung&lt;/b&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="315" y="450" width="170" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="7OuSPlXaUR59k3nLAixx-48" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0.31;entryY=0.8;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#dae8fc;strokeColor=#3942BF;strokeWidth=2;" edge="1" parent="1" source="7OuSPlXaUR59k3nLAixx-29" target="7OuSPlXaUR59k3nLAixx-47">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="280" y="410" as="sourcePoint" />
-            <mxPoint x="330" y="360" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="7OuSPlXaUR59k3nLAixx-49" value="&lt;b&gt;Gebietsverwaltung&lt;/b&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="322.5" y="180" width="155" height="80" as="geometry" />
