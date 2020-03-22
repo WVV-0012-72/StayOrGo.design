@@ -22,7 +22,6 @@ let fakeData = {
 }
 
 
-
 const fakeLocationData = {
 	'pi-box-02': {
 		label: 'Aldi Berlin-Kreuzberg',
@@ -41,15 +40,32 @@ const fakeLocationData = {
 }
 
 
-function renderSpinner(data) {
+function renderLinks(data) {
+	let result = ''
+	for (loc of data) {
+        console.log(loc)
+		result += bigButton(loc, 'onclick="getRealtimeData(\'' + loc + '\')"')
+	}
+	document.getElementById('linkList').innerHTML = result
+}
+
+
+function bigButton(label, props) {
+	let result = '<button class="btn btn-primary btn-lg" ' + props + '>' + label + '</button>\n'
+	return result
+}
+
+
+function renderSpinner(id = 'cardTest') {
 	let header = div('card-header', 'Lade Daten ...')
 	let body = div('card-body text-center', '<img src="res/gfx/loading.gif" alt="Spinner"/>')
 	let footer = div('card-footer text-right text-muted', '...')
 
 	let card = div('card', header + body + footer)
 
-	document.getElementById('cardTest').innerHTML = card
+	document.getElementById(id).innerHTML = card
 }
+
 
 function renderLocationCard(data) {
 	// document.getElementById('preformatted').innerHTML = JSON.stringify(data, null, '\t');

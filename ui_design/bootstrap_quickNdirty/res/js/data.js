@@ -3,9 +3,22 @@
 function getRealtimeData(piHostname) {
 	renderSpinner()
 	$.get("https://dweet.io:443/get/latest/dweet/for/" + piHostname, function(data, status) {
-		// alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+		alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 		renderLocationCard(data)
 	})
+}
+
+
+function getLocations() {
+	renderSpinner('linkList')
+
+	let data = ['Aldi Berlin-Kreuzberg', 'ALDI Berlin-Moabit']
+
+	// $.get("https://dweet.io:443/get/latest/dweet/for/" + piHostname, function(data, status) {
+	// 	// alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+	// 	renderLocationCard(data)
+	// })
+	renderLinks(data)
 }
 
 

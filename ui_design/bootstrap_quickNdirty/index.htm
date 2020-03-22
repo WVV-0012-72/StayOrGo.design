@@ -29,15 +29,16 @@
 
 	<script src="res/js/render.js"></script>
 	<script src="res/js/data.js"></script>
-
-
-
 </head>
 
-<body>
 
 
-	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+
+<body onload="getLocations()">
+
+
+	<nav class="navbar navbar-expand-sm justify-content-center bg-primary navbar-dark">
+		<a class="navbar-brand" href="#">StayOrGo</a>
 		<ul class="navbar-nav">
 			<li class="nav-item active">
 				<a class="nav-link" href="#">Active</a>
@@ -59,7 +60,7 @@
 		<img src="res/gfx/positionsstift.svg" width="60px">
 		<img src="res/gfx/Bimetrical_icon_person_black.svg">
 		<h1>StayOrGo</h1>
-		<p>Resize this responsive page to see the effect!</p>
+		<p id="linkList">Links ... werden geladen</p>
 
 		<p>
 			<button onclick="renderLocationCard(fakeData)">fakeData</button> /
@@ -104,7 +105,7 @@
 			</div>
 
 
-			
+
 		</div>
 	</div>
 
