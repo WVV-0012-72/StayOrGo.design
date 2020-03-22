@@ -1,4 +1,9 @@
-let fakeData = {
+const config = {
+	maxPersonDisplay: 7
+}
+
+
+const fakeData = {
 	"this": "succeeded",
 	"by": "getting",
 	"the": "dweets",
@@ -13,7 +18,7 @@ let fakeData = {
 			"macs_area": 24,
 			"ratio": 20,
 			"cputemp": "46.2'C",
-			"anzap": 17,
+			"anzap": 24,
 			"ma20s": 20,
 			"match": "www",
 			"errors": 0
@@ -43,52 +48,28 @@ const fakeLocationData = {
 function renderLinks(data) {
 	let result = ''
 	for (loc of data) {
-        console.log(loc)
-		result += bigButton(loc, 'onclick="getRealtimeData(\'' + loc + '\')"')
+		result += bigButton(loc.location, 'onclick="getRealtimeData(\'' + loc.id + '\')"')
 	}
 	document.getElementById('linkList').innerHTML = result
 }
 
 
-function bigButton(label, props) {
-	let result = '<button class="btn btn-primary btn-lg" ' + props + '>' + label + '</button>\n'
-	return result
-}
-
-
-function renderSpinner(id = 'cardTest') {
-	let header = div('card-header', 'Lade Daten ...')
-	let body = div('card-body text-center', '<img src="res/gfx/loading.gif" alt="Spinner"/>')
-	let footer = div('card-footer text-right text-muted', '...')
-
-	let card = div('card', header + body + footer)
-
-	document.getElementById(id).innerHTML = card
-}
-
 
 function renderLocationCard(data) {
 	// document.getElementById('preformatted').innerHTML = JSON.stringify(data, null, '\t');
-
-
 	let pos = data.with[0]
 	let id = pos.thing
 
 	let lastUpdate = timeConverter(pos.content.unixtime)
 
-	let pin = div("col-sm-2", '<img src="res/gfx/positionsstift.svg" width="40px">')
-	let location = div("col-sm-6", renderLocationBody(id))
+	let pin = div("col-sm-1", '<img src="res/gfx/positionsstift.svg" width="40px">')
+	let location = div("col-sm-7", renderLocationBody(id))
+	let persons = div("col-sm-4", renderCrowd(pos.content.anzap))
 
-	let crowd = '<h1 class="display-3" style="display: block;">' + pos.content.anzap + '</h1>'
-	crowd += '<img src="res/gfx/Bimetrical_icon_person_black.svg">'.repeat(Math.min(7, pos.content.anzap))
 
-	let persons = div("col-sm-4", crowd)
-
-	let bodyRow = div('row', pin + location + persons)
-
-	let header = div('card-header', pos.thing)
-	let body = div('card-body', bodyRow)
-	let footer = div('card-footer text-right text-muted', '<small>Aktualisierung: <b>' + lastUpdate + '</b> (' + pos.thing + ')</small>')
+	let header = div('card-header', renderCrowdLevel(pos.content.anzap))
+	let body = div('card-body', div('row', pin + location + persons))
+	let footer = div('card-footer text-right text-muted small', 'Aktualisierung: <b>' + lastUpdate + '</b></small>')
 
 	let card = div('card', header + body + footer)
 
@@ -105,6 +86,40 @@ function renderLocationCard(data) {
 }
 
 
+function renderCrowd(num) {
+	const clip = 20;
+	let status = levelColor(num)
+
+	let crowd = '<h1 class="display-3" style="display: inline;">' + num + '</h1> Pers.'
+	crowd = '<span class="text-' + status + '">' + crowd + '</span><br/>'
+	crowd += '<img src="res/gfx/Bimetrical_icon_person_black.svg">'.repeat(Math.min(config.maxPersonDisplay, num))
+	if (num > config.maxPersonDisplay) {
+		crowd += " <big>&hellip;</big>"
+	}
+	return crowd
+}
+
+
+function renderCrowdLevel(num) {
+	const clip = 20;
+	let status = 'Aktuell weniger Besucher als gewöhnlich.'
+
+	if (num >= clip) {
+		status = 'Aktuell mehr Besucher als gewöhnlich.'
+	}
+
+	return '<span class="text-' + levelColor(num) + '">' + status + '</span>'
+}
+
+
+function levelColor(num) {
+	const clip = 20;
+	if (num >= clip) {
+		return 'danger'
+	} else {
+		return 'success'
+	}
+}
 
 function renderLocationBody(id) {
 	if (id in fakeLocationData) {
@@ -112,7 +127,7 @@ function renderLocationBody(id) {
 		let result = '<h4>' + loc.label + '</h4>'
 		result += '<p>' + loc.street + '<br/>'
 		result += loc.postal + ' ' + loc.city + '</p>'
-		result += '<p class="text-muted text-right">' + id + '<p/>'
+			// result += '<p class="text-muted text-right">' + id + '<p/>'
 
 		return result
 	} else {
@@ -143,4 +158,23 @@ function timeConverter(UNIX_timestamp) {
 	var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
 	return time;
 }
-console.log(timeConverter(0));
+// console.log(timeConverter(0));
+
+
+
+
+function bigButton(label, props) {
+	let result = '<button class="btn btn-info btn-lg" style="background:#00468C; border:0" ' + props + '>' + label + '</button>\n'
+	return result
+}
+
+
+function renderSpinner(id) {
+	let header = div('card-header', 'Lade Daten ...')
+	let body = div('card-body text-center', '<img src="res/gfx/loading.gif" alt="Spinner"/>')
+	let footer = div('card-footer text-right text-muted', '...')
+
+	let card = div('card', header + body + footer)
+
+	document.getElementById(id).innerHTML = card
+}

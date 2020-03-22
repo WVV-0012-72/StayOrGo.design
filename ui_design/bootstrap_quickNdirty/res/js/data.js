@@ -1,9 +1,10 @@
 // data.js
 
 function getRealtimeData(piHostname) {
-	renderSpinner()
+	renderSpinner('cardTest')
+	renderSpinner('mapHolder')
 	$.get("https://dweet.io:443/get/latest/dweet/for/" + piHostname, function(data, status) {
-		alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+		// alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 		renderLocationCard(data)
 	})
 }
@@ -12,7 +13,9 @@ function getRealtimeData(piHostname) {
 function getLocations() {
 	renderSpinner('linkList')
 
-	let data = ['Aldi Berlin-Kreuzberg', 'ALDI Berlin-Moabit']
+	let data = [{ location: 'Aldi Berlin-Kreuzberg', id: 'pi-box-02' },
+		{ location: 'ALDI Berlin-Moabit', id: 'pi-box-02' }
+	]
 
 	// $.get("https://dweet.io:443/get/latest/dweet/for/" + piHostname, function(data, status) {
 	// 	// alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
