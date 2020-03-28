@@ -44,7 +44,7 @@ const fakeLocationData = {
 	}
 }
 
-
+// render some buttons with links
 function renderLinks(data) {
 	let result = ''
 	for (loc of data) {
@@ -52,7 +52,6 @@ function renderLinks(data) {
 	}
 	document.getElementById('linkList').innerHTML = result
 }
-
 
 
 function renderLocationCard(data) {
@@ -137,13 +136,16 @@ function renderLocationBody(id) {
 
 
 
-
 function div(divClass, content) {
 	var template = Handlebars.compile('<div class="{{divClass}}">{{{content}}}</div>');
 	return template({ divClass: divClass, content: content })
 }
 
 
+function renderNewApi(data) {
+	let card = '<pre>' + JSON.stringify(data) + '</pre>'
+	document.getElementById('debugNewApi').innerHTML = card
+}
 
 
 function timeConverter(UNIX_timestamp) {

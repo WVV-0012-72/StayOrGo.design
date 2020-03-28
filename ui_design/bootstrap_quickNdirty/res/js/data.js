@@ -35,3 +35,13 @@ function prepGoogleMaps(data) {
 
 	return content
 }
+
+
+function getNewApiData() {
+	renderSpinner('debugNewApi')
+	$.get("https://95.179.161.77:8086/query?db=stay_or_go&u=frontend&p=virus123&' --data-urlencode 'q=SHOW TAG VALUES FROM crowd_size WITH KEY=\"location_name \"'",
+		function(data, status) {
+			alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+			renderNewApi(data)
+		})
+}
